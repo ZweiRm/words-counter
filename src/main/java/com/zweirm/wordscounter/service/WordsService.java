@@ -35,8 +35,8 @@ public class WordsService {
         job.setOutputValueClass(IntWritable.class);
 
         // 指定输入输出位置
-        FileInputFormat.setInputPaths(job, new Path("/"));
-        FileOutputFormat.setOutputPath(job, new Path("result"));
+        FileInputFormat.setInputPaths(job, new Path("hdfs://192.168.56.101:9001/test/1.txt"));
+        FileOutputFormat.setOutputPath(job, new Path("hdfs://192.168.56.101:9001/test/words.txt"));
 
         // 启动作业
         job.waitForCompletion(true);
